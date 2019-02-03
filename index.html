@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test!</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Import the Styling -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+    <script src="timer.js" defer></script>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="aframe-extras.js"></script>
+    <script src="aframe-physics-system.js"></script>
+    <script src="https://cdn.rawgit.com/archilogic-com/aframe-gblock/6498b71d/dist/gblock.js"></script>
+  </head>
+  <body>
+    <a-scene physics>
+      <!-- Camera Controls and Cursor Setup -->
+      <a-entity id="rig" movement-controls="controls: keyboard" kinematic-body rotation="0 -90 0">
+        <a-entity id="camera"
+          camera
+          position="0 1.6 0"
+          look-controls="pointerLockEnabled: true">
+            <a-cursor></a-cursor>
+            <a-entity id="timer" text="value: 1:00:00; color: red; width: 2;" position="-0.3 0.75 -1" >
+            </a-entity>
+        </a-entity>
+      </a-entity>
+
+      <!-- Floor -->
+      <a-grid static-body></a-grid>
+
+      <!-- Walls -->
+      <a-box static-body src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fvy.jpeg?1542329265863" height="15.5" width="30" position="0 0 5"></a-box>
+      <a-box static-body src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fvy.jpeg?1542329265863" height="15.5" width="30" position="0 0 -5"></a-box>
+      <a-box static-body src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fvy.jpeg?1542329265863" height="15.5" depth="10" position="-14 0 0"></a-box>
+      <a-box static-body src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fvy.jpeg?1542329265863" height="15.5" depth="10" position="15 0 0"></a-box>
+      <a-box static-body src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fvy.jpeg?1542329265863" depth="10" width="30" position="0 8 0"></a-box>
+
+      <!-- Carpet -->
+      <a-box static-body src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages.jpg?1541977225228" depth="10" width="30" position="0 0 0"></a-box>
+      <a-box width="5" depth="3" height="1.1" position="3.25 0 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Ffloor1.jpg?1542056009365"></a-box>
+      <a-box width="5" depth="3" height="1.1" position="-3.25 0 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Ffloor1.jpg?1542056009365"></a-box>
+
+      <!-- Bedside Table -->
+      <a-box static-body height="2" width="2.3" depth="5" position="12 .3 0" rotation="0 90 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fdownload-1.jpg?1541970846541"></a-box>
+      <a-box static-body height="1.25" width="1.75" depth="1.25" position="14 1 -2.5" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041" rotation="0 90 0"></a-box>
+      <a-box static-body height="1.25" width="1.75" depth="1.25" position="14 1 2.5" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041" rotation="0 90 0"></a-box>
+      <a-box height=".25" width="1" depth="1.5" position="14 1.3 0"></a-box>
+
+      <!-- TV -->
+      <a-box static-body height="2.5" width="3" position="-13 1.75 0" rotation="0 90 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2FScreen%20Shot%202018-11-11%20at%204.26.08%20PM.png?1541972088852"></a-box>
+      <a-box static-body height="2.5" width="1" position="-13 1.75 2" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041"></a-box>
+      <a-box static-body height="2.5" width="1" position="-13 1.75 -2" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041"></a-box>
+      <a-box static-body height="1" width="5" rotation="0 90 0" position="-13 3.5 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041"></a-box>
+
+
+      <!-- Desk -->
+      <a-box static-body height="1" width=".2" depth="1.75" position="1.5 1 -4.2" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041"></a-box>
+      <a-box static-body height="1" width=".2" depth="1.75" position="-1.5 1 -4.2" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041"></a-box>
+      <a-box static-body height=".2" width="3.2" depth="1.75" position="0 1.5 -4.2" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041"></a-box>
+
+      <!-- Door -->
+      <a-box static-body height="3" width="1.5" depth=".1" position="0 2 4.4" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fimages-1.jpg?1541971029041"></a-box>
+
+      <!-- Letter -->
+      <a-box static-body height="1.5" width="0.1" depth="1" position="0 2.6 -4.5" rotation="0 90 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2Fyadadyahda%20yada.png?1542330057286"></a-box>
+      <!-- Pictures -->
+      <a-box static-body height="2.5" width="0.1" depth="2.5" position="-5.5 3 4.51" rotation="0 90 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2FScreen%20Shot%202018-11-11%20at%204.26.08%20PM.png?1541972088852"></a-box>
+      <a-box static-body height="2.5" width="0.1" depth="2.5" position="-5.5 3 -4.51" rotation="0 90 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2FScreen%20Shot%202018-11-11%20at%204.26.08%20PM.png?1541972088852"></a-box>
+      <a-box static-body height="2.5" width="0.1" depth="2.5" position="5.5 3 4.51" rotation="0 90 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2FScreen%20Shot%202018-11-11%20at%204.26.08%20PM.png?1541972088852"></a-box>
+      <a-box static-body height="2.5" width="0.1" depth="2.5" position="5.5 3 -4.51" rotation="0 90 0" src="https://cdn.glitch.com/b169c7d3-4f89-473a-92b7-9cf6840b44ed%2FScreen%20Shot%202018-11-11%20at%204.26.08%20PM.png?1541972088852"></a-box>
+
+      <!-- Building model -->
+      <a-entity gblock="https://poly.google.com/view/dVG0XJrpRJC" position="-0.222 0.132 -3.794" static-body></a-entity>
+      <!-- Robot -->
+      <a-entity gblock="https://poly.google.com/view/de1C80IeXEi" position="-12 0 3.5" scale="1.5 1.5 1.5" rotation="0 90 0"></a-entity>
+      <!-- gramaphone -->
+      <a-entity id="gramaphone" gblock="https://poly.google.com/view/9MZ0sCt1REv" rotation="0 90 0" position="14 0.35 2" ></a-entity>
+      <!-- Lamp -->
+      <a-entity static-body gblock="https://poly.google.com/view/23XivszLV11" scale="0.01 0.01 0.01" rotation="0 90 0" position="14 1.64 -2.5"></a-entity>
+      <!-- Chandelier -->
+      <a-entity  gblock="https://poly.google.com/view/bXveeuhkcZY" scale=".25 .25 .25" rotation="0 90 0" position="0 5 0"></a-entity>
+      <!-- Roomba -->
+      <a-entity id="roomba" static-body gblock="https://poly.google.com/view/5WERTPcyIMn" scale=".05 .05 .05" rotation="0 90 0" position="-12.2 .5 -3.3">
+        <a-animation
+              attribute="position"
+               dur="10000"
+               fill="forwards"
+               to="0 0.5 0"
+               begin="click">
+        </a-animation>
+      </a-entity>
+
+    </a-scene>
+
+
+
+  </body>
+</html>
